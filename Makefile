@@ -7,7 +7,7 @@ FESVR_H := ../riscv-fesvr/fesvr/encoding.h
 ENV_H := ../riscv-tests/env/encoding.h
 GAS_H := ../riscv-gnu-toolchain/binutils/include/opcode/riscv-opc.h
 
-ALL_OPCODES := opcodes-pseudo opcodes opcodes-rvc opcodes-rvc-pseudo opcodes-hwacha-pseudo opcodes-hwacha opcodes-hwacha-ut opcodes-custom
+ALL_OPCODES := opcodes-pseudo opcodes opcodes-rvc opcodes-rvc-pseudo opcodes-custom
 
 install: $(ISASIM_H) $(PK_H) $(FESVR_H) $(ENV_H) $(GAS_H) inst.chisel instr-table.tex priv-instr-table.tex
 

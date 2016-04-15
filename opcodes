@@ -31,7 +31,26 @@ srai    rd rs1 31..26=16 shamt 14..12=5 6..2=0x04 1..0=3
 ori     rd rs1 imm12           14..12=6 6..2=0x04 1..0=3
 andi    rd rs1 imm12           14..12=7 6..2=0x04 1..0=3
 
+# PACO ALU Int
+#                      funct4[3] funct4[2:0] opcode
+#                            |     |        /    \
+#                            |     |       |      |
 add.approx rd rs1 rs2 imm6 25=0 14..12=0 6..2=2 1..0=3
+sub.approx rd rs1 rs2 imm6 25=0 14..12=1 6..2=2 1..0=3
+mul.approx rd rs1 rs2 imm6 25=0 14..12=2 6..2=2 1..0=3
+# PACO ALU Float
+#                           funct4[3] sqrt  funct4[2:0]  opcode
+#                               |      |        |        /    \
+#                               |      |        |       |      |
+fadd.s.approx  rd rs1 rs2 imm6 25=0          14..12=4 6..2=2 1..0=3
+fsub.s.approx  rd rs1 rs2 imm6 25=0          14..12=5 6..2=2 1..0=3
+fmul.s.approx  rd rs1 rs2 imm6 25=0          14..12=6 6..2=2 1..0=3
+fsqrt.s.approx rd rs1     imm6 25=1 24..20=0 14..12=4 6..2=2 1..0=3
+fadd.d.approx  rd rs1 rs2 imm6 25=1          14..12=0 6..2=2 1..0=3
+fsub.d.approx  rd rs1 rs2 imm6 25=1          14..12=1 6..2=2 1..0=3
+fmul.d.approx  rd rs1 rs2 imm6 25=1          14..12=2 6..2=2 1..0=3
+fsqrt.d.approx rd rs1     imm6 25=1 24..20=0 14..12=5 6..2=2 1..0=3
+
 add     rd rs1 rs2 31..25=0  14..12=0 6..2=0x0C 1..0=3
 sub     rd rs1 rs2 31..25=32 14..12=0 6..2=0x0C 1..0=3
 sll     rd rs1 rs2 31..25=0  14..12=1 6..2=0x0C 1..0=3

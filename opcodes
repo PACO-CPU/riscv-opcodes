@@ -31,6 +31,15 @@ srai    rd rs1 31..26=16 shamt 14..12=5 6..2=0x04 1..0=3
 ori     rd rs1 imm12           14..12=6 6..2=0x04 1..0=3
 andi    rd rs1 imm12           14..12=7 6..2=0x04 1..0=3
 
+
+
+# PACO LUT Int
+#                res[6] funct2[2]  MAEnable  opcode
+#                    |        |       |     /    \
+#                    |        |       |    |      |
+lute    rd rs1 li  31..26=0  14..13=2 12=0   6..0=43
+
+
 # PACO ALU Int
 #                      funct4[3] funct4[2:0] opcode
 #                            |     |        /    \

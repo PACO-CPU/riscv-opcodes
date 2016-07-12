@@ -36,8 +36,8 @@ andi    rd rs1 imm12           14..12=7 6..2=0x04 1..0=3
 #                     res[6]     funct2[2]   MAEnable  opcode
 #                        |            |        |      /    \
 #                        |            |        |     |      |
-lute    rd rs1 li      31..26=0     14..13=2  12=0   6..0=43
-lutl    rs1 li imm res  31..26=0     14..13=0  12=0   6..0=43
+lute    rd rs1 lsel      31..26=0     14..13=2  12=0   6..0=43
+lutl    rs1 lsel immhi immlo reset    14..13=0  12=0   6..0=43
 
 # PACO ALU Int
 #                      funct4[3] funct4[2:0] opcode

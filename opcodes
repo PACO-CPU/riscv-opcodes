@@ -33,11 +33,12 @@ andi    rd rs1 imm12           14..12=7 6..2=0x04 1..0=3
 
 
 # PACO LUT Int
-#                     res[6]     funct2[2]   MAEnable  opcode
-#                        |            |        |      /    \
-#                        |            |        |     |      |
-lute    rd rs1 lsel      31..26=0     14..13=2  12=0   6..0=43
-lutl    rs1 lsel immhi immlo reset    14..13=0  12=0   6..0=43
+#                                                     funct2[2]    res[2]     res[6]   	      opcode
+#                                                        |           |           |            /    \
+#                                                        |           |           |           |      |
+lutl    rs1 reset lselhi lsello offsethi offsetlo      31..30=0               24..20=0       6..0=43
+lute    rd rs1 lselhi lsello                           31..30=1   29..27=0    24..20=0       6..0=43
+lute3   rd rs3 rs2 rs1 lselhi lsello                                                         6..0=107
 
 # PACO ALU Int
 #                      funct4[3] funct4[2:0] opcode

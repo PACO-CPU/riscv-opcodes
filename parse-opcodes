@@ -31,10 +31,12 @@ arglut['zimm'] = (19,15)
 arglut['shamt'] = (25,20)
 arglut['shamtw'] = (24,20)
 arglut['vseglen'] = (31,29)
-arglut['lsel']=(25,20)
-arglut['immlo']=(10,7)
-arglut['immhi']=(31,26)
-arglut['reset']=(11,11)
+# LUT Instruction specific
+arglut['reset'] = (7,7)
+arglut['lselhi'] = (26,25)
+arglut['lsello'] = (14,12)
+arglut['offsethi'] = (29,27)
+arglut['offsetlo'] = (11,8)
 
 causes = [
   (0x00, 'misaligned fetch'),
